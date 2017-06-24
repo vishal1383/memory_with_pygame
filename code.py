@@ -100,7 +100,7 @@ def main():
                                                             pygame.display.update()
                                                             pygame.time.wait(1000)
                                                 firstSelection=None
-                        pygame.display.updat()#the function that update the display objec tclass onto the sreen
+                        pygame.display.update()#the function that update the display objec tclass onto the sreen
                         FPSCLOCK.tick(FPS)
                                                                                        
                                                                                        
