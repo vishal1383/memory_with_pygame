@@ -132,7 +132,19 @@ def splitIntoGroups(groupSize,theList):
             for i in range(0,len(theList),groupSize):
                         result.append(theList[i:i+groupSize])
             return result
-
+def leftTopCordsOfBox(boxx,boxy):
+#this funciton is for translating between the box coordinates and the general pixels
+#this is helpful for us as the box that is 3rd from left and 1st from top is more 
+#convienently represented as (1,3) rther than some pixel values
+#so this takes the coordinates of the box in that fashion and return the pixel coordinates
+#it is a good programming practice to name variables correctly
+            left=boxx*(GAPSIZE+BOXWIDTH)+XMARGIN
+            #XMARGIN is margin along X axis
+            top=boxy*(GAPSIZE+BOXHEIGHT)+YMARGIN
+            # same logic applies for Y also
+            return (left,top)
+#as left is the distance from the left which will be the x axis distance
+                        
             
 
 
