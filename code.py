@@ -42,6 +42,12 @@ ALLCOLORS=(RED,GREEN,BLUE,YELLOW,ORANGE,PURPLE,CYAN)#COLOR TUPLE
 ALLSHAPES=(DONUT,SQUARE,DIAMOND,LINES,OVAL)
 assert len(ALLCOLORS)*len(ALLSHAPES)*2>=BOARDWIDTH*BOARDHEIGHT,"Board is too big "
 
+def main():
+            global FPSCLOCK,DISPLAYSURF  #Had to initialie to global becaus we'll use them in other funcrions too
+            pygame.init()
+            FPSCLOCK=pygame.time.CLock()
+            DISPLAYSURF=pygame.display.set_mode((WINDOWWIDTH,WINDOWHEIGHT))
+            
 
 
             
