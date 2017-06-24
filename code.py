@@ -125,7 +125,14 @@ def getRandomizedBoard():
                                     colomn.append(icons[0])  #continuosly adding and eleent and after that deleting 
                                     del icons[0]              #it in the second line
                         board.append(colomn)                                                                                  
-            return board                                                                           
+            return board  
+def splitIntoGroups(groupSize,theList):
+            #to return a list of lists divided into corresponding group sizes
+            result=[]
+            for i in range(0,len(theList),groupSize):
+                        result.append(theList[i:i+groupSize])
+            return result
+
             
 
 
