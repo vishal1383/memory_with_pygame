@@ -100,10 +100,32 @@ def main():
                                                             pygame.display.update()
                                                             pygame.time.wait(1000)
                                                 firstSelection=None
-                        pygame.display.update()#the function that update the display objec tclass onto the sreen
+                        pygame.display.update()#the function that update the display object class onto the sreen
                         FPSCLOCK.tick(FPS)
-                                                                                       
-                                                                                       
+def generateRevealedBoxesData(var):
+            revealeBoxes=False
+            for i in range(BOARDWIDTH):
+                        revealedBoxes.append([var]*BOARDHEIGHT)
+            return revealedBoxes
+def getRandomizedBoard():
+            icons=[]                   #icons are basically a tuple of shape and the color accompanying them
+            for shape in ALLSHAPES:
+                        for color in ALLCOLORS:
+                                    icons.append((shape,color))
+            random.shuffle(icons)
+            numIconsused=int((BOARDHEIGHT*BOARDWIDTH)/2)#explicit typecast to prevent the abuse
+            icons=icons[:numIconsused]*2  #as we need a copy of the others
+            random.shuffle(icons)
+            #just this is to create the random tuples of the 2-D list
+            #now to insert them to boxes
+            boxes=[]   #this code is the some of the times that you notice the difference between c and python
+            for colomn in range(BOARDHEIGHT):
+                        colomn=[]
+                        for y in range(BOARDWIDTH):
+                                    colomn.append(icons[0])  #continuosly adding and eleent and after that deleting 
+                                    del icons[0]              #it in the second line
+                        board.append(colomn)                                                                                  
+            return board                                                                           
             
 
 
