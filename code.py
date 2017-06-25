@@ -171,7 +171,13 @@ def drawIcon(shape,color,boxx,boxy):
                         for i in range(0,BOXSIZE,4):
                                          pygame.draw.line(DISPLAYSURF,color,(left+i,top),(top+i,left))
             elif shape==OVAL:                
-                        pygame.draw.ellipse(DISPLAYSURF, color, (left, top + quarter, BOXSIZE, half))
-            
+                        pygame.draw.ellipse(DISPLAYSURF, color, (left, top + quarter, BOXSIZE, half))    
+def getShapeAndColor(board,boxx,boxy):
+            return (board[boxx][boxy][0],board[boxx][boxy][1])
+# it is a single line of function it could have been easily replaced by that in the code but I choose not ot to improv the readability of the code
+
+                                         
+                                         
+                                         
             
             
