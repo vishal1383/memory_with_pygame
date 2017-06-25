@@ -144,10 +144,34 @@ def leftTopCordsOfBox(boxx,boxy):
             # same logic applies for Y also
             return (left,top)
 #as left is the distance from the left which will be the x axis distance
-                        
+# now the previous one was for changing the box coordinatres to pixel ones
+#but this one will be for changing the one to pixels from box coordinates
+#the texhnicalities of the issue would be  pygame.Recct(left_top_coordinates,height,width) is the format of the one to be accepted
+def getBoxAtPixel(x,y):# input is the x and y coordimnates of the box
+            for boxx in range(BOARDWIDTH):
+                        for boxy in range(BOARDHEIGHT):
+                                    left,top=leftTopCordsOfBox(boxx,boxy)
+                                    boxrect=pygame.draw.Rect(left,top,BOXSIZE,BOXSIZE)                                    
+                                    if(boxrect.collidepoint(x,y)):
+                                                return (boxx,boxy)
+            return (None,None)    
+#the code must be maximum self evident as all
+def drawIcon(shape,color,boxx,boxy):
+            quarter=int(BOXSIZE*0.25)   #just to increse the readibility of the code
+            half=int(BOXSIZE*0.5)
             
-
-
+            left,top=leftTopCoordsOfBox(box,boxy)  #get pixel  co-ordinates
+            
+            if shape==DONUT:
+                        pygame.draw.circle(DISLAYSURF,color,(left+half,top+half),half-5)
+                        pygame.draw.circle(DISPLAYSURF,BGCOLOR,(left+half,top+half),quarter-5)
+            elif shape==SQUARE:
+                        pygame.draw.Rect(DISPLAYSURF,color,(left+quarter,top+quarter,BOXSIZE-half,BOXSIZE-half)
+            elif shape==LINES:
+                        for i in range(0,BOXSIZE,4):
+                                         pygame.draw.line(DISPLAYSURF,color,(left+i,top),(top+i,left))
+            elif shape==OVAL:                
+                        pygame.draw.ellipse(DISPLAYSURF, color, (left, top + quarter, BOXSIZE, half))
             
             
             
