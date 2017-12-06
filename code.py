@@ -175,7 +175,7 @@ def drawIcon(shape,color,boxx,boxy):
 def getShapeAndColor(board,boxx,boxy):
             return (board[boxx][boxy][0],board[boxx][boxy][1])
 # it is a single line of function it could have been easily replaced by that in the code but I choose not ot to improv the readability of the code
-
+#thats it
 
                                          
                                          
