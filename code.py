@@ -158,7 +158,7 @@ def getBoxAtPixel(x,y):# input is the x and y coordimnates of the box
 #the code must be maximum self evident as all
 def drawIcon(shape,color,boxx,boxy):
             quarter=int(BOXSIZE*0.25)   #just to increse the readibility of the code
-            half=int(BOXSIZE*0.5)
+            half=int(BOXSIZE*0.1)
             
             left,top=leftTopCoordsOfBox(box,boxy)  #get pixel  co-ordinates
             
